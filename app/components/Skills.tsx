@@ -8,14 +8,6 @@ const MotionDiv = dynamic(() =>
 );
 const Logo = dynamic(() => import("./Nexta"), { ssr: false });
 const Node = dynamic(() => import("./Node"), { ssr: false });
-
-const Skills = ({
-  fadeInUp,
-  isDarkMode,
-}: {
-  fadeInUp: any;
-  isDarkMode: boolean;
-}) => {
   const skills = [
     {
       icon: <Image src="/logo_dark.svg" width={50} height={50} alt="React.js" />,
@@ -55,8 +47,11 @@ const Skills = ({
       icon: <Image src="/tailwind.png" width={50} height={50} alt="TailwindCSS" />,
       name: "TailwindCSS",
     },
-    { icon: <img src="elephant.png" width={50} alt="PostgreSQL" />, name: "PostgreSQL" },
+    { icon: <Image src="elephant.png" width={50} alt="PostgreSQL" />, name: "PostgreSQL" },
   ];
+
+
+const Skills = ({ fadeInUp, isDarkMode }: { fadeInUp: (delay: number) => any; isDarkMode: boolean }) => {
 
   return (
     <div>

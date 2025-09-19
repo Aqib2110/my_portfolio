@@ -38,7 +38,7 @@ const About = () => {
         transition={{ delay: 0.3, duration: 0.6 }}
       >
         <p className="mb-4">
-          Hi, I'm{" "}
+          Hi, I&apos;m{" "}
           <span className="text-cyan-400 font-semibold">Muhammad Aqib</span>, a
           passionate Full Stack Developer with a focus on building modern,
           scalable web applications.
