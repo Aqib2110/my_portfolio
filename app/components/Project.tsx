@@ -13,7 +13,11 @@ const MotionDiv = dynamic(
   () => import("framer-motion").then((mod) => mod.motion.div),
   { ssr: false }
 );
-
+type FadeInUp = (delay: number) => {
+  initial: { opacity: number; y: number };
+  animate: { opacity: number; y: number };
+  transition: { delay: number; duration: number };
+};
 const projects = [
   {
     title: "Excalidraw Clone",
@@ -44,7 +48,7 @@ const Project = ({
   fadeInUp,
   isDarkMode,
 }: {
-  fadeInUp: any;
+  fadeInUp: FadeInUp;
   isDarkMode: boolean;
 }) => {
   return (

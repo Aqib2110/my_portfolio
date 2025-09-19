@@ -8,12 +8,16 @@ const MotionDiv = dynamic(
   () => import("framer-motion").then((mod) => mod.motion.div),
   { ssr: false }
 );
-
+type FadeInUp = (delay: number) => {
+  initial: { opacity: number; y: number };
+  animate: { opacity: number; y: number };
+  transition: { delay: number; duration: number };
+};
 const Hero = ({
   fadeInUp,
   isDarkMode,
 }: {
-  fadeInUp: any;
+  fadeInUp: FadeInUp;
   isDarkMode: boolean;
 }) => {
   const items = [

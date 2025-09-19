@@ -13,7 +13,7 @@ const MotionH1 = dynamic(
   { ssr: false }
 );
 
-const About = () => {
+const About: React.FC = () => {
   const { isDarkMode } = useContext(MyContext);
 
   return (
@@ -23,7 +23,7 @@ const About = () => {
       } flex flex-col justify-center items-center px-6`}
     >
       <MotionH1
-        className={`text-4xl text-blue-500 font-bold mb-6`}
+        className="text-4xl text-blue-500 font-bold mb-6"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -63,9 +63,9 @@ const About = () => {
 
         <p>
           My goal is to create impactful solutions that solve real-world
-          problems. When I'm not coding, you’ll find me exploring new tech
-          trends, contributing to open source, or sharing knowledge with other
-          developers.
+          problems. When I&apos;m not coding, you&apos;ll find me exploring new
+          tech trends, contributing to open source, or sharing knowledge with
+          other developers.
         </p>
       </MotionDiv>
     </section>

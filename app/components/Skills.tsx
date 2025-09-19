@@ -8,6 +8,11 @@ const MotionDiv = dynamic(() =>
 );
 const Logo = dynamic(() => import("./Nexta"), { ssr: false });
 const Node = dynamic(() => import("./Node"), { ssr: false });
+type FadeInUp = (delay: number) => {
+  initial: { opacity: number; y: number };
+  animate: { opacity: number; y: number };
+  transition: { delay: number; duration: number };
+};
   const skills = [
     {
       icon: <Image src="/logo_dark.svg" width={50} height={50} alt="React.js" />,
@@ -51,7 +56,7 @@ const Node = dynamic(() => import("./Node"), { ssr: false });
   ];
 
 
-const Skills = ({ fadeInUp, isDarkMode }: { fadeInUp: (delay: number) => any; isDarkMode: boolean }) => {
+const Skills = ({ fadeInUp, isDarkMode }: { fadeInUp: FadeInUp; isDarkMode: boolean }) => {
 
   return (
     <div>

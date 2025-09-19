@@ -8,14 +8,22 @@ const MotionDiv = dynamic(
   { ssr: false }
 );
 
+
+type FadeInUp = (delay: number) => {
+  initial: { opacity: number; y: number };
+  animate: { opacity: number; y: number };
+  transition: { delay: number; duration: number };
+};
+
 const ContactMe = ({
   fadeInUp,
   isDarkMode,
 }: {
-  fadeInUp: any;
+  fadeInUp: FadeInUp;
   isDarkMode: boolean;
 }) => {
   const [isSent, setIsSent] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
   const [formData, setFormData] = useState({
     title: "Portfolio Contact",
     name: "",
@@ -29,45 +37,46 @@ const ContactMe = ({
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!validEmail.test(formData.email)) {
-      alert("Please enter a valid email address.");
+      setStatusMessage("❌ Please enter a valid email address.");
       return;
     }
 
     setIsSent(true);
+    setStatusMessage("Sending...");
 
-    emailjs
-      .send(
+    try {
+      await emailjs.send(
         "service_r86scan",
         "template_8872lch",
         formData,
         "BkmQ0xNM351uqF8f4"
-      )
-      .then(
-        (result) => {
-          console.log("✅ Message Sent:", result.text);
-          alert("Message sent successfully!");
-          setFormData({
-            title: "Portfolio Contact",
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          console.error("❌ Error:", error.text);
-          alert("Failed to send message. Try again later.");
-        }
-      )
-      .finally(() => setIsSent(false));
+      );
+      setStatusMessage("✅ Message sent successfully!");
+      setFormData({
+        title: "Portfolio Contact",
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("❌ Error:", error);
+      setStatusMessage("⚠️ Failed to send message. Try again later.");
+    } finally {
+      setIsSent(false);
+    }
   };
 
   return (
-    <MotionDiv {...fadeInUp(5.5)}>
+    <MotionDiv
+      variants={fadeInUp(5.5)} 
+      initial="hidden"         
+      animate="visible"        
+    >
       <div>
         <h2 className="text-3xl font-bold pb-3 text-center text-blue-500">
           Contact
@@ -129,10 +138,24 @@ const ContactMe = ({
         <button
           type="submit"
           disabled={isSent}
-          className="w-full mb-10 bg-blue-500 rounded-md cursor-pointer py-2 text-white disabled:opacity-60 disabled:cursor-not-allowed"
+          className="w-full mb-2 bg-blue-500 rounded-md cursor-pointer py-2 text-white disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {isSent ? "Sending..." : "Send"}
         </button>
+
+        {statusMessage && (
+          <p
+            className={`text-center ${
+              statusMessage.startsWith("✅")
+                ? "text-green-500"
+                : statusMessage.startsWith("⚠️") || statusMessage.startsWith("❌")
+                ? "text-red-500"
+                : "text-gray-500"
+            }`}
+          >
+            {statusMessage}
+          </p>
+        )}
       </form>
     </MotionDiv>
   );

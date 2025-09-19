@@ -8,7 +8,7 @@
 import Skills from "./Skills";
   const Home = () => {
     const { isDarkMode } = useContext(MyContext);
-    const fadeInUp = (delay = 0) => ({
+    const fadeInUp = (delay : number) => ({
       initial: { opacity: 0, y: 20 },
       animate: { opacity: 1, y: 0 },
       transition: { delay, duration: 0.6 },

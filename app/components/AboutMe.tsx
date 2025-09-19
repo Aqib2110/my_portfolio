@@ -39,7 +39,6 @@ const AboutMe: React.FC<AboutMeProps> = ({ fadeInUp, isDarkMode }) => {
             applications.
           </p>
 
-          {/* Mobile + Tablet */}
           <p
             className={`text-lg xl:text-2xl md:text-start lg:hidden block text-center ${
               isDarkMode ? "text-white" : "text-black"
@@ -58,7 +57,6 @@ const AboutMe: React.FC<AboutMeProps> = ({ fadeInUp, isDarkMode }) => {
             </Link>
           </p>
 
-          {/* Desktop */}
           <p
             className={`text-lg xl:text-2xl md:text-start lg:block hidden text-center ${
               isDarkMode ? "text-white" : "text-black"

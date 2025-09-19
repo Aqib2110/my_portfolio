@@ -1,11 +1,19 @@
 "use client"
 import React, { createContext, useState,useEffect } from 'react'
+import { Dispatch, SetStateAction } from "react";
 
-export const MyContext = createContext({
+interface MyContextType {
+  isDarkMode: boolean;
+  setIsDarkMode: Dispatch<SetStateAction<boolean>>;
+  nav: string;
+  setNav: Dispatch<SetStateAction<string>>;
+}
+
+export const MyContext = createContext<MyContextType>({
   isDarkMode: true,
-  setIsDarkMode: (_: boolean) => {},
-  nav: "Home | Resume | Project | Contact | About",
-  setNav: (_: string) => {},
+  setIsDarkMode: () => {},
+  nav: "Home",
+  setNav: () => {}, 
 });
 
 const ContextAPI = ({children}: {children: React.ReactNode}) => {
