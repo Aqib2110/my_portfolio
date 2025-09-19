@@ -37,7 +37,7 @@ const Hero = ({
         className="flex flex-col md:flex-row gap-0 md:gap-10"
         {...fadeInUp(0)}
       >
-        <div className="py-4 md:py-8 flex justify-center items-center md:flex-none md:justify-start md:items-start">
+        <div className="py-4  md:py-8 flex justify-center items-center md:flex-none md:justify-start md:items-start">
           <div className="avatar">
             <div className="ring-primary ring-offset-base-100 xl:w-50 w-30 rounded-full ring-2 ring-offset-2">
               <Image

@@ -15,7 +15,7 @@ import Skills from "./Skills";
     });
 
     return (
-      <div className={`min-h-screen ${isDarkMode ? "bg-black" : "bg-white"}`}>
+      <div className={`min-h-screen pt-16 ${isDarkMode ? "bg-black" : "bg-white"}`}>
         <div className="flex h-full px-10 md:px-20 lg:px-27 xl:px-35 w-full">
           <div className="flex w-full flex-col">
 

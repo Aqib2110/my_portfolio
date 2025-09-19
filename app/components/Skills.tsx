@@ -52,7 +52,7 @@ type FadeInUp = (delay: number) => {
       icon: <Image src="/tailwind.png" width={50} height={50} alt="TailwindCSS" />,
       name: "TailwindCSS",
     },
-    { icon: <Image src="elephant.png" width={50} alt="PostgreSQL" />, name: "PostgreSQL" },
+    { icon: <Image src="/elephant.png" width={50} height={50} alt="PostgreSQL" />, name: "PostgreSQL" },
   ];
 
 

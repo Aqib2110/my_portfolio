@@ -19,7 +19,7 @@ const Navbar = () => {
     setsideBar(side=>!side);
   }
   return (
-    <div className="">
+    <div className="fixed z-40 top-0 h-16 w-full">
  <div className={`flex flex-col ${sideBar ? "translate-x-0":"-translate-x-full"} h-screen w-3/4 ${isDarkMode ? "bg-black" : "bg-white"} fixed z-50 top-0 left-0  py-15 items-center gap-5`}>
  <div className="absolute top-3 right-3">
   <RxCross2 onClick={handleClick} className={`text-lg ${isDarkMode ? "text-white" : "text-black"}`}/>
