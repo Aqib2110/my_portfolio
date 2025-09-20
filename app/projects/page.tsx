@@ -1,4 +1,4 @@
-import MyProjects from "../components/MyProjects";
+import MyProjects from '../components/MyProjects'
 const page = () => {
   return (
     <div>

@@ -1,18 +1,14 @@
   "use client";
   import React, { useContext } from "react";
+  import dynamic from "next/dynamic";
   import { MyContext } from "./ContextAPI";
-  import Hero from "./Hero";
-  import AboutMe from "./AboutMe";
-  import ContactMe from "./ContactMe";
-  import Project from "./Project";
-import Skills from "./Skills";
+ const Hero = dynamic(() => import("./Hero"), { ssr: false });
+ const AboutMe = dynamic(() => import("./AboutMe"), { ssr: false });
+ const ContactMe = dynamic(() => import("./ContactMe"), { ssr: false });
+ const Project = dynamic(() => import("./Project"), { ssr: false });
+ const Skills = dynamic(() => import("./Skills"), { ssr: false });
   const Home = () => {
     const { isDarkMode } = useContext(MyContext);
-    const fadeInUp = (delay : number) => ({
-      initial: { opacity: 0, y: 20 },
-      animate: { opacity: 1, y: 0 },
-      transition: { delay, duration: 0.6 },
-    });
 
     return (
       <div className={`min-h-screen pt-16 ${isDarkMode ? "bg-black" : "bg-white"}`}>
@@ -20,23 +16,23 @@ import Skills from "./Skills";
           <div className="flex w-full flex-col">
 
           <div>
-            <Hero isDarkMode={isDarkMode} fadeInUp={fadeInUp}/>
+            <Hero isDarkMode={isDarkMode} />
           </div>
 
           <div>
-            <AboutMe isDarkMode={isDarkMode} fadeInUp={fadeInUp}/>
+            <AboutMe isDarkMode={isDarkMode} />
           </div>
         
            <div>
-            <Skills isDarkMode={isDarkMode} fadeInUp={fadeInUp}/>
+            <Skills isDarkMode={isDarkMode} />
            </div>
 
             <div>
-            <Project isDarkMode={isDarkMode} fadeInUp={fadeInUp}/>
+            <Project isDarkMode={isDarkMode} />
             </div>
 
             <div>
-              <ContactMe isDarkMode={isDarkMode} fadeInUp={fadeInUp} />
+              <ContactMe isDarkMode={isDarkMode} />
             </div>
           </div>
         </div>

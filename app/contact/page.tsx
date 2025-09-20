@@ -1,5 +1,4 @@
 import Contact from "../components/Contact"
-
 const page = () => {
   return (
     <div>
