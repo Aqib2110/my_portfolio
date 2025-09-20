@@ -1,10 +1,8 @@
 "use client"
 import React from 'react'
-import dynamic from 'next/dynamic';
 import { useContext } from 'react';
 import { MyContext } from './ContextAPI';
-const GiHamburgerMenu = dynamic(() =>
-  import("react-icons/gi").then((mod) => mod.GiHamburgerMenu));
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const MobNavbar = ({handleClick}:{handleClick:()=>void}) => {
      const {isDarkMode,setIsDarkMode} = useContext(MyContext);
