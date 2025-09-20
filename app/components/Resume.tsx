@@ -50,7 +50,7 @@ const Resume = () => {
 
   return (
     <section
-      className={`min-h-screen ${
+      className={`min-h-screen pt-16 ${
         isDarkMode ? "bg-black text-gray-200" : "bg-white text-black"
       } px-6 py-12`}
     >

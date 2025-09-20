@@ -68,7 +68,7 @@ const Projects = () => {
 
   return (
     <section
-      className={`min-h-screen py-12 px-6 ${
+      className={`min-h-screen pt-16 py-12 px-6 ${
         isDarkMode ? "bg-black text-white" : "bg-white text-black"
       }`}
     >

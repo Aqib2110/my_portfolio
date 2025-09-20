@@ -34,7 +34,7 @@ const Hero = ({
   return (
     <div>
       <MotionDiv
-        className="flex flex-col md:flex-row gap-0 md:gap-10"
+        className="flex flex-col  md:flex-row gap-0 md:gap-10"
         {...fadeInUp(0)}
       >
         <div className="py-4  md:py-8 flex justify-center items-center md:flex-none md:justify-start md:items-start">
@@ -52,9 +52,9 @@ const Hero = ({
           </div>
         </div>
 
-        <div className="pt-4 md:pt-8 pb-3">
+        <div className="pt-4  px-5 sm:px-8 md:px-0 md:pt-8 pb-3">
           <div
-            className={`flex flex-col px-8 gap-2 md:gap-4 text-2xl xl:text-3xl font-bold ${
+            className={`flex flex-col  px-8 gap-2 md:gap-4 text-2xl xl:text-3xl font-bold ${
               isDarkMode ? "text-white" : "text-black"
             }`}
           >
@@ -70,10 +70,10 @@ const Hero = ({
           </div>
 
           <MotionDiv
-            className="flex flex-col items-center justify-center md:flex-row px-0 md:px-2 gap-3 mt-5"
+            className="flex flex-col  items-center justify-center md:flex-row px-0 md:px-2 gap-3 mt-5"
             {...fadeInUp(1)}
           >
-            <div className="w-3/4 sm:w-1/2 md:w-full">
+            <div className="w-3/4  sm:w-1/2 md:w-full">
               <Link href="/resume" passHref>
                 <button className="xl:text-lg text-auto bg-gradient-to-r w-full from-pink-500 via-purple-500 to-indigo-500 rounded-md cursor-pointer py-2 hover:bg-purple-600 text-white">
                   Download Resume
@@ -81,7 +81,7 @@ const Hero = ({
               </Link>
             </div>
 
-            <div className="w-3/4 sm:w-1/2 md:w-full">
+            <div className="w-3/4 sm:w-1/2  md:w-full">
               <Link href="/contact" passHref>
                 <button
                   className={`btn xl:text-lg w-full ${

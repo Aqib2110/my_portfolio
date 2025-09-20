@@ -29,9 +29,32 @@ const AboutMe: React.FC<AboutMeProps> = ({ fadeInUp, isDarkMode }) => {
           About Me
         </h2>
 
-        <div>
+        <div className=" px-10 md:px-0">
+
+
+            <p
+            className={`xl:text-2xl block md:hidden  px-3 sm:px-0 text-lg md:text-start text-center ${
+              isDarkMode ? "text-white" : "text-black"
+            }`}
+          >
+            I am a full stack developer with a passion for creating scalable web
+            applications.With proficiency in both front-end and back-end technologies, I
+            enjoy bringing ideas to life in both browser and server environments.
+            <Link href="/about">
+              <button
+                className={`ml-2 btn btn-sm ${
+                  isDarkMode ? "bg-white text-black" : "bg-black text-white"
+                }`}
+              >
+                Read more...
+              </button>
+            </Link>
+          </p>
+
+
+
           <p
-            className={`xl:text-2xl text-lg md:text-start text-center ${
+            className={`xl:text-2xl md:block hidden text-lg md:text-start text-center ${
               isDarkMode ? "text-white" : "text-black"
             }`}
           >
@@ -40,7 +63,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ fadeInUp, isDarkMode }) => {
           </p>
 
           <p
-            className={`text-lg xl:text-2xl md:text-start lg:hidden block text-center ${
+            className={`text-lg xl:text-2xl md:text-start lg:hidden hidden md:block text-center ${
               isDarkMode ? "text-white" : "text-black"
             }`}
           >
