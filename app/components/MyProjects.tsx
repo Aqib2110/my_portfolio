@@ -14,9 +14,8 @@ const MotionH1 = dynamic(
   { ssr: false }
 );
 
-const FaGithub = dynamic(() =>
-  import("react-icons/fa").then((mod) => mod.FaGithub)
-);
+import { FaGithub } from "react-icons/fa";
+
 
 const projects = [
   {
