@@ -82,7 +82,7 @@ const ContactMe: React.FC<ContactMeProps> = ({ isDarkMode }) => {
       whileInView="visible"
       viewport={{ once: true }}
       variants={fadeInUpVariant}
-      className="px-2 md:px-0"
+      className=""
     >
       <div>
         <h2 className="text-3xl font-bold pb-3 text-center text-blue-500">Contact</h2>

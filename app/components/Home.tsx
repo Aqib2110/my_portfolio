@@ -12,7 +12,8 @@
 
     return (
       <div className={`min-h-screen pt-16 ${isDarkMode ? "bg-black" : "bg-white"}`}>
-        <div className="flex h-full px-10 md:px-20 lg:px-27 xl:px-35 w-full">
+        <div className="flex h-full px-5 sm:px-10 md:px-20 lg:px-27 xl:px-35 w-full">
+{/* px-10           */}
           <div className="flex w-full flex-col">
 
           <div>

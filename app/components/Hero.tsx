@@ -31,7 +31,7 @@ const Hero = ({ isDarkMode }: HeroProps) => {
   ];
 
   return (
-    <div className="px-4 md:px-0">
+    <div className="px-0 md:px-0">
       <MotionDiv
         className="flex flex-col md:flex-row gap-0 md:gap-10"
         initial="hidden"
@@ -45,7 +45,7 @@ const Hero = ({ isDarkMode }: HeroProps) => {
         viewport={{ once: true }}
       >
         <MotionDiv
-          className="py-4 md:py-8 flex justify-center items-center md:flex-none md:justify-start md:items-start"
+          className="py-4 md:pb-auto pb-0 md:py-8  flex justify-center items-center md:flex-none md:justify-start md:items-start"
           variants={fadeInUpVariants}
           viewport={{ once: true }}
         >
@@ -64,9 +64,10 @@ const Hero = ({ isDarkMode }: HeroProps) => {
           </div>
         </MotionDiv>
 
-        <div className="pt-4 px-5 sm:px-8 md:px-0 md:pt-8 pb-3">
+        <div className="pt-4 w-full md:w-auto  md:pt-8 pb-3">
+          {/* px-5 sm:px-8 md:px-0*/}
           <MotionDiv
-            className={`flex flex-col px-8 gap-2 md:gap-4 text-2xl xl:text-3xl font-bold ${
+            className={`flex flex-col w-5/6 md:w-auto  md:mx-0 mx-auto gap-2 md:gap-4 text-2xl xl:text-3xl font-bold ${
               isDarkMode ? "text-white" : "text-black"
             }`}
             viewport={{ once: true }}
