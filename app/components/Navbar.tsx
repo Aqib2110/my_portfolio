@@ -79,11 +79,11 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`navbar h-auto lg:h-[150px] hidden md:block ${
+        className={`navbar hidden md:block ${
           isDarkMode ? "bg-neutral text-neutral-content" : "bg-zinc-100"
         }`}
       >
-        <div className="flex justify-between items-center px-3 sm:px-2 md:px-5 w-full">
+        <div className="flex justify-between items-center px-3 py-auto lg:py-8 sm:px-2 md:px-5 w-full">
           <div className="flex items-center gap-3 md:gap-8 lg:gap-10 xl:gap-15">
             {navItems.map((item) => (
               <NavButton key={item.name} item={item} />
