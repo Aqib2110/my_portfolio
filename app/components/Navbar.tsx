@@ -79,7 +79,7 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`navbar hidden md:block ${
+        className={`navbar h-auto lg:h-[150px] hidden md:block ${
           isDarkMode ? "bg-neutral text-neutral-content" : "bg-zinc-100"
         }`}
       >
