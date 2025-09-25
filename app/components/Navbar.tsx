@@ -90,7 +90,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="flex items-center gap-10">
+          <div className="flex justify-center items-center gap-10">
             <label className="flex cursor-pointer gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
