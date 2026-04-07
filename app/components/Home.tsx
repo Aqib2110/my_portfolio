@@ -7,32 +7,49 @@
  const ContactMe = dynamic(() => import("./ContactMe"), { ssr: false });
  const Project = dynamic(() => import("./Project"), { ssr: false });
  const Skills = dynamic(() => import("./Skills"), { ssr: false });
+ const MergeComponenets = dynamic(() => import("./MergeComponenets"), { ssr: false });
   const Home = () => {
     const { isDarkMode } = useContext(MyContext);
 
     return (
-      <div className={`min-h-screen pt-16 ${isDarkMode ? "bg-black" : "bg-white"}`}>
-        <div className="flex h-full px-5 sm:px-10 md:px-20 lg:px-27 xl:px-35 w-full">
+      <div className={`min-h-screen  pt-16 ${isDarkMode ? "bg-black" : "bg-white"}`}>
+        <div className="flex h-full  w-full">
 {/* px-10           */}
           <div className="flex w-full flex-col">
 
-          <div>
+
+
+         <div className="min-h-screen w-full">
+            {/* <Hero isDarkMode={isDarkMode} />
+
+
+         
+            <AboutMe isDarkMode={isDarkMode} />
+     
+        
+     
+            <Skills isDarkMode={isDarkMode} /> */}
+            <MergeComponenets />
+           </div>
+
+
+
+
+          {/* <div>
             <Hero isDarkMode={isDarkMode} />
-          </div>
+         </div>
 
           <div>
             <AboutMe isDarkMode={isDarkMode} />
           </div>
         
-           <div>
+          <div>
             <Skills isDarkMode={isDarkMode} />
-           </div>
+           </div> */}
 
-            <div>
+            <div className="z-30 px-5 sm:px-10 md:px-20 lg:px-27 xl:px-35">
             <Project isDarkMode={isDarkMode} />
-            </div>
-
-            <div>
+          
               <ContactMe isDarkMode={isDarkMode} />
             </div>
           </div>

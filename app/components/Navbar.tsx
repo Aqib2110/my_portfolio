@@ -56,11 +56,11 @@ const Navbar = () => {
   );
 
   return (
-    <div className="fixed z-40 top-0 h-16 w-full">
-      <div
+    <div className="fixed z-40  w-full">
+      {/* <div
         className={`flex flex-col ${
           sideBar ? "translate-x-0" : "-translate-x-full"
-        } h-screen w-3/4 ${isDarkMode ? "bg-black" : "bg-white"} fixed z-50 top-0 left-0 py-15 items-center gap-5 transition-transform`}
+        } h-screen border w-3/4 ${isDarkMode ? "bg-black" : "bg-white"} fixed z-50 top-0 left-0 py-15 items-center gap-5 transition-transform`}
       >
         <div className="absolute top-3 right-3">
           <RxCross2
@@ -76,21 +76,21 @@ const Navbar = () => {
 
       <div className="block md:hidden">
         <MobNavbar handleClick={handleClick} />
-      </div>
+      </div> */}
 
       <div
-        className={`navbar hidden md:block ${
+        className={`navbar flex justify-center items-center hidden md:block ${
           isDarkMode ? "bg-neutral text-neutral-content" : "bg-zinc-100"
         }`}
       >
-        <div className="flex justify-between items-center px-3 sm:px-2 md:px-5 w-full">
-          <div className="flex items-center gap-3 md:gap-8 lg:gap-10 xl:gap-15">
+        <div className="flex  justify-between items-center px-3 sm:px-2 md:px-5 w-full">
+          <div className="flex  items-center gap-3 md:gap-8 lg:gap-10 xl:gap-15">
             {navItems.map((item) => (
               <NavButton key={item.name} item={item} />
             ))}
           </div>
 
-          <div className="flex items-center gap-10">
+          <div className="flex items-center  gap-10">
             <label className="flex cursor-pointer gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
