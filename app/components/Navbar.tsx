@@ -1,3 +1,300 @@
+// "use client";
+// import React, { useContext, useState } from "react";
+// import Link from "next/link";
+// import dynamic from "next/dynamic";
+// import { MyContext } from "./ContextAPI";
+// import MobNavbar from "./MobNavbar";
+
+// const RxCross2 = dynamic(() =>
+//   import("react-icons/rx").then((mod) => mod.RxCross2)
+// );
+
+// type NavItem = {
+//   name: string;
+//   href: string;
+// };
+
+// const navItems: NavItem[] = [
+//   { name: "Home", href: "/" },
+//   { name: "Resume", href: "/resume" },
+//   { name: "Projects", href: "/projects" },
+//   { name: "Contact", href: "/contact" },
+//   { name: "About", href: "/about" },
+// ];
+
+// const Navbar = () => {
+//   const [sideBar, setSideBar] = useState(false);
+//   const { nav, setNav, isDarkMode, setIsDarkMode } = useContext(MyContext);
+
+//   const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+//   const handleClick = () => setSideBar((prev) => !prev);
+
+//   const NavButton = ({
+//     item,
+//     closeSidebar,
+//   }: {
+//     item: NavItem;
+//     closeSidebar?: boolean;
+//   }) => (
+//     <Link
+//       href={item.href}
+//       onClick={() => {
+//         setNav(item.name);
+//         if (closeSidebar) handleClick();
+//       }}
+//       className="flex flex-col gap-1 cursor-pointer"
+//     >
+//       <span className="text-auto xl:text-lg">{item.name}</span>
+
+//       <span
+//         className={`w-full ${
+//           nav === item.name ? "flex" : "hidden"
+//         } px-1 justify-center items-center`}
+//       >
+//         <span className="bg-white border w-full"></span>
+//       </span>
+//     </Link>
+//   );
+
+//   return (
+//     <div className="fixed z-40 w-full">
+//       {/* Sidebar */}
+//       <div
+//         className={`flex flex-col ${
+//           sideBar ? "translate-x-0" : "-translate-x-full"
+//         } h-screen border w-3/4 ${
+//           isDarkMode ? "bg-black" : "bg-white"
+//         } fixed z-50 top-0 left-0 py-15 items-center gap-5 transition-transform`}
+//       >
+//         <div className="absolute top-3 right-3">
+//           <RxCross2
+//             onClick={handleClick}
+//             className={`text-lg ${
+//               isDarkMode ? "text-white" : "text-black"
+//             }`}
+//           />
+//         </div>
+
+//         {navItems.map((item) => (
+//           <NavButton key={item.name} item={item} closeSidebar />
+//         ))}
+//       </div>
+
+//       {/* Mobile */}
+//       <div className="block md:hidden">
+//         <MobNavbar handleClick={handleClick} />
+//       </div>
+
+//       {/* Desktop Navbar */}
+//       <div
+//         className={`h-14 hidden md:flex px-5 md:px-20 lg:px-27 xl:px-35 justify-center items-center ${
+//           isDarkMode ? "bg-neutral text-neutral-content" : "bg-zinc-100"
+//         }`}
+//       >
+//         <div className="flex justify-between items-center w-full">
+//           {/* Nav Links */}
+//           <div className="flex items-center gap-3 md:gap-8 lg:gap-10 xl:gap-15">
+//             {navItems.map((item) => (
+//               <NavButton key={item.name} item={item} />
+//             ))}
+//           </div>
+
+//           {/* Dark Mode Toggle */}
+//           <div className="flex justify-center items-center gap-5">
+//             <label className="flex cursor-pointer gap-2">
+//               <svg
+//                 xmlns="http://www.w3.org/2000/svg"
+//                 width="25"
+//                 height="25"
+//                 fill="none"
+//                 stroke={isDarkMode ? "white" : "black"}
+//                 strokeWidth="2"
+//                 strokeLinecap="round"
+//                 strokeLinejoin="round"
+//               >
+//                 <circle cx="12" cy="12" r="5" />
+//               </svg>
+
+//               <input
+//                 type="checkbox"
+//                 className={`toggle ${
+//                   isDarkMode ? "bg-white" : "bg-black"
+//                 }`}
+//                 onChange={toggleDarkMode}
+//                 checked={isDarkMode}
+//               />
+
+//               <svg
+//                 xmlns="http://www.w3.org/2000/svg"
+//                 width="25"
+//                 height="25"
+//                 fill="none"
+//                 stroke={isDarkMode ? "white" : "black"}
+//                 strokeWidth="2"
+//                 strokeLinecap="round"
+//                 strokeLinejoin="round"
+//               >
+//                 <path d="M21 12.79A9 9 0 1 1 11.21 3" />
+//               </svg>
+//             </label>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Navbar;
+// "use client";
+// import React, { useContext, useState } from "react";
+// import Link from "next/link";
+// import dynamic from "next/dynamic";
+// import { MyContext } from "./ContextAPI";
+// import MobNavbar from "./MobNavbar";
+
+// const RxCross2 = dynamic(() =>
+//   import("react-icons/rx").then((mod) => mod.RxCross2)
+// );
+
+// type NavItem = {
+//   name: string;
+//   href: string;
+// };
+
+// const navItems: NavItem[] = [
+//   { name: "Home", href: "/" },
+//   { name: "Resume", href: "/resume" },
+//   { name: "Projects", href: "/projects" },
+//   { name: "Contact", href: "/contact" },
+//   { name: "About", href: "/about" },
+// ];
+
+// const Navbar = () => {
+//   const [sideBar, setSideBar] = useState(false);
+//   const { nav, setNav, isDarkMode, setIsDarkMode } = useContext(MyContext);
+
+//   const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+//   const handleClick = () => setSideBar((prev) => !prev);
+
+//   const NavButton = ({
+//     item,
+//     closeSidebar,
+//   }: {
+//     item: NavItem;
+//     closeSidebar?: boolean;
+//   }) => (
+//     <Link
+//       href={item.href}
+//       onClick={() => {
+//         setNav(item.name);
+//         if (closeSidebar) handleClick();
+//       }}
+//       className="flex flex-col gap-1 cursor-pointer"
+//     >
+//       <span className="text-auto xl:text-lg">{item.name}</span>
+
+//       <span
+//         className={`w-full ${
+//           nav === item.name ? "flex" : "hidden"
+//         } px-1 justify-center items-center`}
+//       >
+//         <span className="bg-white border w-full"></span>
+//       </span>
+//     </Link>
+//   );
+
+//   return (
+//     <div className="fixed z-40 w-full">
+//       {/* Sidebar */}
+//       <div
+//         className={`flex flex-col ${
+//           sideBar ? "translate-x-0" : "-translate-x-full"
+//         } h-screen border w-3/4 ${
+//           isDarkMode ? "bg-black" : "bg-white"
+//         } fixed z-50 top-0 left-0 py-15 items-center gap-5 transition-transform`}
+//       >
+//         <div className="absolute top-3 right-3">
+//           <RxCross2
+//             onClick={handleClick}
+//             className={`text-lg ${
+//               isDarkMode ? "text-white" : "text-black"
+//             }`}
+//           />
+//         </div>
+
+//         {navItems.map((item) => (
+//           <NavButton key={item.name} item={item} closeSidebar />
+//         ))}
+//       </div>
+
+//       {/* Mobile */}
+//       <div className="block md:hidden">
+//         <MobNavbar handleClick={handleClick} />
+//       </div>
+
+//       {/* Desktop Navbar */}
+//       <div
+//         className={`h-14 hidden md:flex px-5 md:px-20 lg:px-27 xl:px-35 justify-center items-center ${
+//           isDarkMode ? "bg-neutral text-neutral-content" : "bg-zinc-100"
+//         }`}
+//       >
+//         <div className="flex justify-between items-center w-full">
+//           {/* Nav Links */}
+//           <div className="flex items-center gap-3 md:gap-8 lg:gap-10 xl:gap-15">
+//             {navItems.map((item) => (
+//               <NavButton key={item.name} item={item} />
+//             ))}
+//           </div>
+
+//           {/* Dark Mode Toggle */}
+//           <div className="flex justify-center items-center gap-5">
+//             <label className="flex cursor-pointer gap-2">
+//               <svg
+//                 xmlns="http://www.w3.org/2000/svg"
+//                 width="25"
+//                 height="25"
+//                 fill="none"
+//                 stroke={isDarkMode ? "white" : "black"}
+//                 strokeWidth="2"
+//                 strokeLinecap="round"
+//                 strokeLinejoin="round"
+//               >
+//                 <circle cx="12" cy="12" r="5" />
+//               </svg>
+
+//               <input
+//                 type="checkbox"
+//                 className={`toggle ${
+//                   isDarkMode ? "bg-white" : "bg-black"
+//                 }`}
+//                 onChange={toggleDarkMode}
+//                 checked={isDarkMode}
+//               />
+
+//               <svg
+//                 xmlns="http://www.w3.org/2000/svg"
+//                 width="25"
+//                 height="25"
+//                 fill="none"
+//                 stroke={isDarkMode ? "white" : "black"}
+//                 strokeWidth="2"
+//                 strokeLinecap="round"
+//                 strokeLinejoin="round"
+//               >
+//                 <path d="M21 12.79A9 9 0 1 1 11.21 3" />
+//               </svg>
+//             </label>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Navbar;
+
+
+
 "use client";
 import React, { useContext, useState } from "react";
 import Link from "next/link";
@@ -22,6 +319,18 @@ const navItems: NavItem[] = [
   { name: "About", href: "/about" },
 ];
 
+const getButtonClass = (isDark: boolean, isActive: boolean) => {
+  if (isDark) {
+    return isActive
+      ? "bg-white text-black cursor-pointer rounded-md px-4 py-2"
+      : "btn btn-ghost text-white hover:bg-white hover:text-black";
+  } else {
+    return isActive
+      ? "bg-black text-white cursor-pointer rounded-md px-4 py-2"
+      : "text-black hover:bg-black hover:text-white px-4 py-2 rounded-md bg-zinc-100";
+  }
+};
+
 const Navbar = () => {
   const [sideBar, setSideBar] = useState(false);
   const { nav, setNav, isDarkMode, setIsDarkMode } = useContext(MyContext);
@@ -29,49 +338,36 @@ const Navbar = () => {
   const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
   const handleClick = () => setSideBar((prev) => !prev);
 
-  const NavButton = ({
-    item,
-    closeSidebar,
-  }: {
-    item: NavItem;
-    closeSidebar?: boolean;
-  }) => (
-    <Link
-      href={item.href}
-      onClick={() => {
-        setNav(item.name);
-        if (closeSidebar) handleClick();
-      }}
-      className="flex flex-col gap-1 cursor-pointer"
-    >
-      <span className="text-auto xl:text-lg">{item.name}</span>
+ const NavButton = ({ item, closeSidebar }:{item:NavItem; closeSidebar?: boolean}) => (
+  <Link
+    href={item.href}
+    onClick={() => {
+      setNav(item.name);
+      if (closeSidebar) handleClick();
+    }}
+    className="flex flex-col gap-1 cursor-pointer"
+  >
+    <span className="text-auto xl:text-lg">
+      {item.name}
+    </span>
 
-      <span
-        className={`w-full ${
-          nav === item.name ? "flex" : "hidden"
-        } px-1 justify-center items-center`}
-      >
-        <span className="bg-white border w-full"></span>
-      </span>
-    </Link>
-  );
+    <span className={`w-full ${nav === item.name ? "flex" : "hidden"} px-1 justify-center items-center`}>
+      <span className="bg-white border w-full"></span>
+    </span>
+  </Link>
+);
 
   return (
-    <div className="fixed z-40 w-full">
-      {/* Sidebar */}
+    <div className="fixed z-40  w-full">
       <div
         className={`flex flex-col ${
           sideBar ? "translate-x-0" : "-translate-x-full"
-        } h-screen border w-3/4 ${
-          isDarkMode ? "bg-black" : "bg-white"
-        } fixed z-50 top-0 left-0 py-15 items-center gap-5 transition-transform`}
+        } h-screen border w-3/4 ${isDarkMode ? "bg-black" : "bg-white"} fixed z-50 top-0 left-0 py-15 items-center gap-5 transition-transform`}
       >
         <div className="absolute top-3 right-3">
           <RxCross2
             onClick={handleClick}
-            className={`text-lg ${
-              isDarkMode ? "text-white" : "text-black"
-            }`}
+            className={`text-lg ${isDarkMode ? "text-white" : "text-black"}`}
           />
         </div>
 
@@ -80,27 +376,38 @@ const Navbar = () => {
         ))}
       </div>
 
-      {/* Mobile */}
       <div className="block md:hidden">
         <MobNavbar handleClick={handleClick} />
       </div>
 
-      {/* Desktop Navbar */}
       <div
-        className={`h-14 hidden md:flex px-5 md:px-20 lg:px-27 xl:px-35 justify-center items-center ${
+
+        className={`h-14 flex  auto md:px-20 lg:px-27 xl:px-35 justify-center items-center hidden md:block ${
           isDarkMode ? "bg-neutral text-neutral-content" : "bg-zinc-100"
         }`}
       >
-        <div className="flex justify-between items-center w-full">
-          {/* Nav Links */}
+        <div className="flex  h-full gap-10 justify-between tems-center  w-full">
+          <div className={`navbar flex w-full items-center justify-start md:gap-30 gap-3  xl:gap-45 hidden md:block flex justify-center items-center ${
+          isDarkMode ? "bg-neutral text-neutral-content" : "bg-zinc-100"
+        }`}>
+
+        <div className="flex justify-between items-center px-3 py-3 sm:px-2 md:px-5 w-full">
           <div className="flex items-center gap-3 md:gap-8 lg:gap-10 xl:gap-15">
             {navItems.map((item) => (
-              <NavButton key={item.name} item={item} />
-            ))}
-          </div>
+              // <div key={item.name} className="flex flex-col items-center gap-1">
+               <NavButton key={item.name} item={item} />
+            
 
-          {/* Dark Mode Toggle */}
-          <div className="flex justify-center items-center gap-5">
+             
+             
+             
+              // </div>
+             
+            ))}
+           
+          </div>
+          {/* <div className="flex items-center  gap-10">
+          <div className="flex justify-center items-center gap-10">
             <label className="flex cursor-pointer gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -113,17 +420,14 @@ const Navbar = () => {
                 strokeLinejoin="round"
               >
                 <circle cx="12" cy="12" r="5" />
+                <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
               </svg>
-
               <input
                 type="checkbox"
-                className={`toggle ${
-                  isDarkMode ? "bg-white" : "bg-black"
-                }`}
+                className={`toggle theme-controller ${isDarkMode ? "bg-white" : "bg-black"}`}
                 onChange={toggleDarkMode}
                 checked={isDarkMode}
               />
-
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
@@ -134,11 +438,14 @@ const Navbar = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <path d="M21 12.79A9 9 0 1 1 11.21 3" />
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
               </svg>
             </label>
-          </div>
+          </div> */}
         </div>
+      </div>
+      </div>
+  
       </div>
     </div>
   );
