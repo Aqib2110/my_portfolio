@@ -159,7 +159,7 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className=""
+      className="h-full border flex flex-col flex-grow"
     >
       <h2 className="text-3xl py-3 text-center md:text-start font-bold text-blue-500">
         My Skills

@@ -119,10 +119,11 @@ import { useContext } from "react";
 import { MyContext } from "./ContextAPI";
 
 // Register plugins
-Matter.use(MatterAttractors);
-Matter.use(MatterWrap);
+
 
 export default function BackgroundAnimation() {
+Matter.use(MatterAttractors);
+Matter.use(MatterWrap);
   const canvasRef = useRef<HTMLDivElement>(null);
   const { isDarkMode } = useContext(MyContext);
 
@@ -276,10 +277,10 @@ export default function BackgroundAnimation() {
   }, []);
 
   return (
-    <div className="relative h-full w-full bg-bg-[#0a0a0a]">
+    <div className="relative flex flex-col flex-grow h-full w-full bg-bg-[#0a0a0a]">
       <div ref={canvasRef} className="overflow-hidden md:block hidden absolute inset-0 h-full w-full  z-10" />
       <div className="fixed top-0 left-0 md:block hidden w-full h-full bg-black/40 z-20 pointer-events-none" />
-       <div className='z-30 relative pointer-events-none px-5 sm:px-10 md:px-20 lg:px-27 xl:px-35'>
+       <div className='z-30 flex flex-col h-full w-full flex-grow relative pointer-events-none px-5 sm:px-10 md:px-20 lg:px-27 xl:px-35'>
            <Hero isDarkMode={isDarkMode} />
 
 

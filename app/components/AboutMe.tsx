@@ -22,7 +22,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ isDarkMode }) => {
 
   return (
     <MotionDiv
-      className="pb-3 py-3 md:mb-0 mb-3  md:py-0"
+      className="pb-3 py-3 flex flex-col flex-grow md:mb-0 mb-3  md:py-0"
       initial="hidden"
       animate="visible"
       variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.3 } } }}

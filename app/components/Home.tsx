@@ -2,11 +2,8 @@
   import React, { useContext } from "react";
   import dynamic from "next/dynamic";
   import { MyContext } from "./ContextAPI";
- const Hero = dynamic(() => import("./Hero"), { ssr: false });
- const AboutMe = dynamic(() => import("./AboutMe"), { ssr: false });
  const ContactMe = dynamic(() => import("./ContactMe"), { ssr: false });
  const Project = dynamic(() => import("./Project"), { ssr: false });
- const Skills = dynamic(() => import("./Skills"), { ssr: false });
  const MergeComponenets = dynamic(() => import("./MergeComponenets"), { ssr: false });
   const Home = () => {
     const { isDarkMode } = useContext(MyContext);
