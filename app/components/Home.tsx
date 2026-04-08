@@ -12,14 +12,14 @@
     const { isDarkMode } = useContext(MyContext);
 
     return (
-      <div className={`min-h-screen  pt-16 ${isDarkMode ? "bg-black" : "bg-white"}`}>
+      <div className={`min-h-screen  pt-14 ${isDarkMode ? "bg-black" : "bg-white"}`}>
         <div className="flex h-full  w-full">
 {/* px-10           */}
           <div className="flex w-full flex-col">
 
 
 
-         <div className="min-h-screen w-full">
+         <div className="min-h-screen  w-full">
             {/* <Hero isDarkMode={isDarkMode} />
 
 

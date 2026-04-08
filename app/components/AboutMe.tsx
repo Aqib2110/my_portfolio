@@ -33,11 +33,9 @@ const AboutMe: React.FC<AboutMeProps> = ({ isDarkMode }) => {
       </h2>
       <div className=" md:mx-0 mx-auto md:w-auto w-5/6">
         <MotionDiv className={`xl:text-2xl w-full  ${isDarkMode ? "text-white" : "text-black"} block md:hidden  text-lg md:text-start text-center`} variants={fadeInUpVariant}>
-          I am a full stack developer with a passion for creating scalable web
-          applications. With proficiency in both front-end and back-end technologies, I
-          enjoy bringing ideas to life in both browser and server environments.
+         I am a full-stack developer with a passion for building scalable web applications. I have proficiency in both front-end and back-end technologies, along with deployment strategies, and I enjoy bringing ideas to life across both browser and server environments.
           <Link href="/about">
-            <button className={`ml-2 btn btn-sm ${buttonStyle}`}>Read more...</button>
+            <button className={`ml-2 btn pointer-events-auto btn-sm ${buttonStyle}`}>Read more...</button>
           </Link>
         </MotionDiv>
 
@@ -46,20 +44,20 @@ const AboutMe: React.FC<AboutMeProps> = ({ isDarkMode }) => {
         </MotionDiv>
 
         <MotionDiv className={`text-lg xl:text-2xl md:text-start lg:hidden hidden md:block text-center ${isDarkMode ? "text-white" : "text-black"}`} variants={fadeInUpVariant}>
-          With proficiency in both front-end and back-end technologies, I enjoy bringing ideas to life in both browser and server environments.
+          With proficiency in both front-end and back-end technologies, along with deployment strategies, I enjoy bringing ideas to life in both browser and server environments.
           <Link href="/about">
             <button className={`ml-2 btn btn-sm ${buttonStyle}`}>Read more...</button>
           </Link>
         </MotionDiv>
 
         <MotionDiv className={`text-lg xl:text-2xl md:text-start lg:block hidden text-center ${isDarkMode ? "text-white" : "text-black"}`} variants={fadeInUpVariant}>
-          With proficiency in both front-end and back-end technologies, I enjoy bringing ideas
+          With proficiency in both front-end and back-end technologies, along with deployment 
         </MotionDiv>
 
         <MotionDiv className={`text-lg xl:text-2xl md:text-start hidden lg:block text-center ${isDarkMode ? "text-white" : "text-black"}`} variants={fadeInUpVariant}>
-          to life in both browser and server environments.
+         strategies, I enjoy bringing ideas to life in both browser and server environments.
           <Link href="/about">
-            <button className={`ml-2 xl:text-lg text-auto btn btn-sm ${buttonStyle}`}>Read more...</button>
+            <button className={`ml-2 xl:text-lg pointer-events-auto text-auto btn btn-sm ${buttonStyle}`}>Read more...</button>
           </Link>
         </MotionDiv>
       </div>

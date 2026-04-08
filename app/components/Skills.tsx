@@ -3,6 +3,9 @@ import React, { useMemo } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { Variants } from "framer-motion";
+import Tooltip from '@mui/material/Tooltip';
+import { IconButton } from "@mui/material";
+
 import { JSX } from "react";
 const MotionDiv = dynamic(
   () => import("framer-motion").then((mod) => mod.motion.div),
@@ -161,7 +164,7 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
       <h2 className="text-3xl py-3 text-center md:text-start font-bold text-blue-500">
         My Skills
       </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 py-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {skills.map((skill, index) => (
           <MotionDiv
             key={skill.name}
@@ -169,10 +172,39 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
             variants={fadeInUpVariant}
             className={`${
               isDarkMode ? "bg-[#1a1a1a] text-white" : "bg-[#f5f5f5] text-black"
-            } flex flex-col gap-1 items-center justify-center rounded-md p-3`}
+            } flex flex-col gap-1 pointer-events-auto items-center justify-center rounded-md p-3`}
           >
-            {skill.icon}
-            <span>{skill.name}</span>
+
+
+    
+<Tooltip
+  title={skill.name}
+  placement="top"
+  arrow
+  slotProps={{
+    tooltip: {
+      sx: {
+        backgroundColor: "black",
+        color: "#fff",
+      },
+    },
+    arrow: {
+      sx: {
+        color: "black",
+      },
+    },
+  }}
+>
+  <IconButton>
+    {skill.icon}
+  </IconButton>
+</Tooltip>
+    
+  
+
+
+           
+            {/* <span>{skill.name}</span> */}
           </MotionDiv>
         ))}
       </div>

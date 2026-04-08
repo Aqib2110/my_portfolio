@@ -105,7 +105,7 @@ const Contact: React.FC = () => {
 
   return (
     <section
-      className={`min-h-screen flex flex-col items-center justify-center px-6 py-12 ${
+      className={`min-h-screen flex flex-col items-center justify-center px-6 py-15 ${
         isDarkMode ? "bg-black text-white" : "bg-white text-black"
       }`}
     >

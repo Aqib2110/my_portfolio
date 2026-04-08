@@ -20,6 +20,7 @@ const ContextAPI = ({children}: {children: React.ReactNode}) => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
   const [nav, setNav] = useState<string>("");
    useEffect(() => {
+    if(window.innerWidth <= 768) setIsDarkMode(false);
     if (typeof window !== "undefined") {
       const path = window.location.pathname;
       if (path === "/") setNav("Home");

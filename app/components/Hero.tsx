@@ -93,7 +93,7 @@ const Hero = ({ isDarkMode }: HeroProps) => {
               <Link href="/resume">
                 <button
                   type="button"
-                  className="xl:text-lg text-auto bg-gradient-to-r w-full from-pink-500 via-purple-500 to-indigo-500 rounded-md cursor-pointer py-2 hover:bg-purple-600 text-white"
+                  className="xl:text-lg pointer-events-auto text-auto bg-gradient-to-r w-full from-pink-500 via-purple-500 to-indigo-500 rounded-md cursor-pointer py-2 hover:bg-purple-600 text-white"
                 >
                   Download Resume
                 </button>
@@ -104,7 +104,7 @@ const Hero = ({ isDarkMode }: HeroProps) => {
               <Link href="/contact">
                 <button
                   type="button"
-                  className={`btn xl:text-lg w-full ${
+                  className={`btn pointer-events-auto xl:text-lg w-full ${
                     isDarkMode ? "bg-white text-black" : "bg-black text-white"
                   }`}
                 >
