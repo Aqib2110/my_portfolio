@@ -15,14 +15,14 @@ const MobNavbar: React.FC<MobNavbarProps> = ({ handleClick }) => {
   }, [setIsDarkMode]);
 
   return (
-    <div className={`navbar ${isDarkMode ? "bg-neutral text-neutral-content" : "bg-zinc-100"}`}>
-      <div className="flex justify-between items-center px-5 w-full">
+    <div className={`h-14 flex  items-center z-50 ${isDarkMode ? "bg-neutral text-neutral-content" : "bg-zinc-100"}`}>
+      <div className="flex  items-center px-5 w-full">
         <GiHamburgerMenu
           onClick={handleClick}
           className={`text-2xl cursor-pointer ${isDarkMode ? "text-white" : "text-black"}`}
         />
 
-        <label className="flex cursor-pointer gap-2 items-center">
+        {/* <label className="flex cursor-pointer gap-2 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -58,7 +58,7 @@ const MobNavbar: React.FC<MobNavbarProps> = ({ handleClick }) => {
           >
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
           </svg>
-        </label>
+        </label> */}
       </div>
     </div>
   );

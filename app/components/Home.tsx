@@ -2,8 +2,7 @@
   import React, { useContext } from "react";
   import dynamic from "next/dynamic";
   import { MyContext } from "./ContextAPI";
- const ContactMe = dynamic(() => import("./ContactMe"), { ssr: false });
- const Project = dynamic(() => import("./Project"), { ssr: false });
+ import MyProjects from "./MyProjects";
  const MergeComponenets = dynamic(() => import("./MergeComponenets"), { ssr: false });
   const Home = () => {
     const { isDarkMode } = useContext(MyContext);
@@ -16,21 +15,9 @@
 
 
 
-         <div className="min-h-screen  w-full">
-            {/* <Hero isDarkMode={isDarkMode} />
-
-
-         
-            <AboutMe isDarkMode={isDarkMode} />
-     
-        
-     
-            <Skills isDarkMode={isDarkMode} /> */}
+         <div className="min-h-screen flex  w-full">
             <MergeComponenets />
            </div>
-
-
-
 
           {/* <div>
             <Hero isDarkMode={isDarkMode} />
@@ -45,9 +32,9 @@
            </div> */}
 
             <div className="z-30 px-5 sm:px-10 md:px-20 lg:px-27 xl:px-35">
-            <Project isDarkMode={isDarkMode} />
+            <MyProjects />
           
-              <ContactMe isDarkMode={isDarkMode} />
+              {/* <ContactMe isDarkMode={isDarkMode} /> */}
             </div>
           </div>
         </div>

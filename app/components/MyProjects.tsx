@@ -4,6 +4,7 @@ import { MyContext } from "./ContextAPI";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
+import { IPadMockup } from "react-device-mockup";
 
 const MotionDiv = dynamic(
   () => import("framer-motion").then((mod) => mod.motion.div),
@@ -15,6 +16,101 @@ const MotionH1 = dynamic(
 );
 
 import { FaGithub } from "react-icons/fa";
+import { div } from "framer-motion/m";
+
+
+
+function renderProjects(project:any,index:number) {
+  return <>
+   
+     
+
+{index % 2 === 0 ? 
+
+ <div className="grid grid-cols-3 h-full w-full">
+
+
+ <div className="py-10">
+        <Image
+          src={"/pnm.png"}
+          alt={"Project Image"}
+          width={900}
+          height={900}
+          className=" hover:scale-140 scale-100 transition-transform duration-300 object-cover"
+        />
+      </div>
+      <div className="flex justify-center h-full items-center">
+        <span className="border w-1/2">
+        </span>
+        <span className="h-full flex justify-center items-center flex-col">
+          <span className=" border-1 h-full">
+          </span>
+          <span className="rounded-full border-2 p-1.5"></span>
+          <span className=" border  h-full ">
+          </span>
+        </span>
+        <span className=" w-1/2">
+        </span>
+      </div>
+      
+      
+        <div className="py-10">
+      
+
+        <h3 className=" text-[32px] font-bold ">{project.title}</h3>
+        <p className="text-[16px] text-gray-600 dark:text-gray-300">{project.desc}</p>
+      </div>
+
+
+
+    </div>
+      
+      
+       :
+
+        <div className="grid grid-cols-3 h-full w-full">
+
+ <div className="py-10">
+      
+
+        <h3 className=" text-[32px] font-bold ">{project.title}</h3>
+        <p className="text-[16px] text-gray-600 dark:text-gray-300">{project.desc}</p>
+      </div>
+
+       <div className="flex justify-center h-full items-center">
+        <span className=" w-1/2">
+        </span>
+        <span className="h-full flex justify-center items-center flex-col">
+          <span className=" border-1 h-full">
+          </span>
+          <span className="rounded-full border-2 p-1.5"></span>
+          <span className=" border  h-full ">
+          </span>
+        </span>
+        <span className="border w-1/2">
+        </span>
+      </div>
+
+
+ <div className="py-10">
+        <Image
+          src={"/pnm.png"}
+          alt={"Project Image"}
+          width={900}
+          height={900}
+          className=" hover:scale-140 scale-100 transition-transform duration-300 object-cover"
+        />
+      </div>
+
+
+
+       </div>
+}
+
+   
+  </>
+}
+
 
 
 const projects = [
@@ -33,17 +129,17 @@ const projects = [
     demo: "#",
   },
   {
-    title: "E-commerce Store",
-    desc: "Full-stack e-commerce app with authentication and payments.",
-    img: "/dummy.png",
+    title: "KnowledgeHub",
+    desc: "Organize your ideas, notes, and resources in one smart, searchable space. KnowledgeHub helps you capture, connect, and grow your knowledge effortlessly.",
+    img: "/pnm.png",
     github: "https://github.com/yourusername/ecommerce",
     demo: "#",
   },
   {
-    title: "Blog Platform",
-    desc: "A full-featured blog with markdown support and admin dashboard.",
+    title: "Codely",
+    desc: "Codely lets you run code securely in isolated environments without setup hassles. Collaborate in real time with others, making coding faster, interactive, and seamless.",
     img: "/dummy.png",
-    github: "https://github.com/yourusername/blog-platform",
+    github: "https://github.com/yourusername/codely",
     demo: "#",
   },
   {
@@ -67,9 +163,8 @@ const Projects = () => {
 
   return (
     <section
-      className={`min-h-screen py-16 px-6 ${
-        isDarkMode ? "bg-black text-white" : "bg-white text-black"
-      }`}
+      className={`min-h-screen py-16 px-6 ${isDarkMode ? "bg-black text-white" : "bg-white text-black"
+        }`}
     >
       <MotionH1
         className="text-4xl font-bold mb-10 text-blue-500 text-center"
@@ -77,10 +172,33 @@ const Projects = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        My Projects
+        Latest Work
       </MotionH1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+<div className="flex flex-col ">
+{
+  projects.map((project, index) => (<>
+ 
+  {renderProjects(project,index)}
+
+  
+  </>))
+}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {projects.map((project, index) => (
           <MotionDiv
             key={index}
@@ -118,16 +236,16 @@ const Projects = () => {
             </div>
           </MotionDiv>
         ))}
-      </div>
+      </div> */}
 
-     
-      <div className="flex justify-center mt-12">
+
+      {/* <div className="flex justify-center mt-12">
         <Link href="https://github.com/yourusername" target="_blank">
           <span className="flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white hover:opacity-90 shadow-md cursor-pointer">
             <FaGithub size={22} /> See More Projects on GitHub
           </span>
         </Link>
-      </div>
+      </div> */}
     </section>
   );
 };

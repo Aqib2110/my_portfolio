@@ -30,7 +30,7 @@ const Hero = ({ isDarkMode }: HeroProps) => {
   ];
 
   return (
-    <div className="px-0 flex  flex-grow md:px-0">
+    <div className="px-0    md:px-0">
       <MotionDiv
         className="flex flex-col md:flex-row gap-0 md:gap-10"
         initial="hidden"

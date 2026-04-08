@@ -159,12 +159,12 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="h-full border flex flex-col flex-grow"
+      className="pb-5 "
     >
       <h2 className="text-3xl py-3 text-center md:text-start font-bold text-blue-500">
         My Skills
       </h2>
-      <div className="grid grid-cols-2 py-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 py-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5  gap-4">
         {skills.map((skill, index) => (
           <MotionDiv
             key={skill.name}
@@ -172,7 +172,7 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
             variants={fadeInUpVariant}
             className={`${
               isDarkMode ? "bg-[#1a1a1a] text-white" : "bg-[#f5f5f5] text-black"
-            } flex flex-col gap-1 pointer-events-auto items-center justify-center rounded-md p-3`}
+            } flex flex-col gap-1 pointer-events-auto items-center justify-center rounded-md p-5 md:p-10`}
           >
 
 

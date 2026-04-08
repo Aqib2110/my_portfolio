@@ -314,11 +314,10 @@ type NavItem = {
 const navItems: NavItem[] = [
   { name: "Home", href: "/" },
   { name: "Resume", href: "/resume" },
-  { name: "Projects", href: "/projects" },
   { name: "Contact", href: "/contact" },
   { name: "About", href: "/about" },
 ];
-
+//  { name: "Projects", href: "/projects" },
 const getButtonClass = (isDark: boolean, isActive: boolean) => {
   if (isDark) {
     return isActive
@@ -347,12 +346,12 @@ const Navbar = () => {
     }}
     className="flex flex-col gap-1 cursor-pointer"
   >
-    <span className="text-auto xl:text-lg">
+    <span className={`text-auto ${isDarkMode ? "text-white" : "text-black"} xl:text-lg`}>
       {item.name}
     </span>
 
     <span className={`w-full ${nav === item.name ? "flex" : "hidden"} px-1 justify-center items-center`}>
-      <span className="bg-white border w-full"></span>
+      <span className={`bg-${isDarkMode ? "white" : "black"} border w-full`}></span>
     </span>
   </Link>
 );
@@ -360,9 +359,9 @@ const Navbar = () => {
   return (
     <div className="fixed z-40  w-full">
       <div
-        className={`flex flex-col ${
+        className={`flex border flex-col ${
           sideBar ? "translate-x-0" : "-translate-x-full"
-        } h-screen border w-3/4 ${isDarkMode ? "bg-black" : "bg-white"} fixed z-50 top-0 left-0 py-15 items-center gap-5 transition-transform`}
+        } h-screen w-3/4 ${isDarkMode ? "bg-black" : "bg-white"} fixed z-50 top-0 left-0  justify-center items-center gap-20 transition-transform`}
       >
         <div className="absolute top-3 right-3">
           <RxCross2
@@ -387,12 +386,12 @@ const Navbar = () => {
         }`}
       >
         <div className="flex  h-full gap-10 justify-between tems-center  w-full">
-          <div className={`navbar flex w-full items-center justify-start md:gap-30 gap-3  xl:gap-45 hidden md:block flex justify-center items-center ${
+          <div className={`h-full flex w-full items-center justify-start md:gap-30 gap-3 xl:gap-45 hidden md:block flex justify-center items-center ${
           isDarkMode ? "bg-neutral text-neutral-content" : "bg-zinc-100"
         }`}>
 
-        <div className="flex justify-between items-center px-3 py-3 sm:px-2 md:px-5 w-full">
-          <div className="flex items-center gap-3 md:gap-8 lg:gap-10 xl:gap-15">
+        <div className="flex  justify-between items-center px-3 py-3 sm:px-2 md:px-5 w-full">
+          <div className="flex  items-center gap-3 md:gap-20 lg:gap-30 xl:gap-30">
             {navItems.map((item) => (
               // <div key={item.name} className="flex flex-col items-center gap-1">
                <NavButton key={item.name} item={item} />
