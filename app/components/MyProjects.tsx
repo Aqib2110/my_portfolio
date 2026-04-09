@@ -27,19 +27,20 @@ function renderProjects(project:any,index:number) {
 
 {index % 2 === 0 ? 
 
- <div className="grid grid-cols-3 h-full w-full">
+ <div className="grid grid-cols-1 md:grid-cols-3  h-full w-full">
 
 
- <div className="py-10">
+ <div className="flex justify-center  h-full items-center">
         <Image
-          src={"/pnm.png"}
-          alt={"Project Image"}
+          src={project.img}
+          alt={project.title}
           width={900}
           height={900}
-          className=" hover:scale-140 scale-100 transition-transform duration-300 object-cover"
+          className=" hover:scale-170 scale-140 transition-transform duration-300 object-fit"
         />
       </div>
-      <div className="flex justify-center h-full items-center">
+
+      <div className="hidden md:flex justify-center h-full items-center">
         <span className="border w-1/2">
         </span>
         <span className="h-full flex justify-center items-center flex-col">
@@ -54,11 +55,17 @@ function renderProjects(project:any,index:number) {
       </div>
       
       
-        <div className="py-10">
-      
-
-        <h3 className=" text-[32px] font-bold ">{project.title}</h3>
+        <div className="flex flex-col gap-1 pt-20   h-full ">
+        <h3 className={`text-[32px] ${project.titleClr} font-bold `}>{project.title}</h3>
         <p className="text-[16px] text-gray-600 dark:text-gray-300">{project.desc}</p>
+        <div>
+          <h4 className="text-[18px] font-semibold mt-4 mb-2">Tech Stack:</h4>
+          {project.tech.split(",").map((tech:any) => (
+            <span key={tech} className="inline-block bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm mr-2 mb-2">
+              {tech.trim()}
+            </span>
+          ))}
+        </div>
       </div>
 
 
@@ -68,16 +75,24 @@ function renderProjects(project:any,index:number) {
       
        :
 
-        <div className="grid grid-cols-3 h-full w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 h-full w-full">
 
- <div className="py-10">
+ <div className="pt-20 flex flex-col gap-1">
       
 
-        <h3 className=" text-[32px] font-bold ">{project.title}</h3>
-        <p className="text-[16px] text-gray-600 dark:text-gray-300">{project.desc}</p>
+        <h3 className={`text-[32px] ${project.titleClr} font-bold `}>{project.title}</h3>
+        <p className="text-[16px] text-gray-600 dark:text-gray-300 ">{project.desc}</p>
+         <div>
+          <h4 className="text-[18px] font-semibold mt-4 mb-2">Tech Stack:</h4>
+          {project.tech.split(",").map((tech:any) => (
+            <span key={tech} className="inline-block bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm mr-2 mb-2">
+              {tech.trim()}
+            </span>
+          ))}
+        </div>
       </div>
 
-       <div className="flex justify-center h-full items-center">
+       <div className="hidden md:flex justify-center h-full items-center">
         <span className=" w-1/2">
         </span>
         <span className="h-full flex justify-center items-center flex-col">
@@ -92,13 +107,13 @@ function renderProjects(project:any,index:number) {
       </div>
 
 
- <div className="py-10">
+ <div className="flex justify-center items-center">
         <Image
-          src={"/pnm.png"}
-          alt={"Project Image"}
+          src={project.img}
+          alt={project.title}
           width={900}
           height={900}
-          className=" hover:scale-140 scale-100 transition-transform duration-300 object-cover"
+          className=" hover:scale-170 scale-140 transition-transform duration-300 object-cover"
         />
       </div>
 
@@ -115,47 +130,51 @@ function renderProjects(project:any,index:number) {
 
 const projects = [
   {
-    title: "Portfolio Website",
-    desc: "My personal portfolio built with Next.js, TailwindCSS, and Framer Motion.",
-    img: "/dummy.png",
-    github: "https://github.com/yourusername/portfolio",
-    demo: "https://yourportfolio.com",
-  },
-  {
-    title: "Chat App",
-    desc: "A real-time chat application using WebSockets and Node.js.",
-    img: "/dummy.png",
-    github: "https://github.com/yourusername/chat-app",
-    demo: "#",
-  },
-  {
     title: "KnowledgeHub",
     desc: "Organize your ideas, notes, and resources in one smart, searchable space. KnowledgeHub helps you capture, connect, and grow your knowledge effortlessly.",
     img: "/pnm.png",
+    titleClr: "text-[#0A1A30]",
+    tech:"Next.js,Typescript, TailwindCSS, Prisma, PostgreSQL, NextAuth, Node.js ,Openai, redis ,Vercel",
     github: "https://github.com/yourusername/ecommerce",
     demo: "#",
   },
   {
     title: "Codely",
     desc: "Codely lets you run code securely in isolated environments without setup hassles. Collaborate in real time with others, making coding faster, interactive, and seamless.",
-    img: "/dummy.png",
+    img: "/codely.png",
+     titleClr: "text-orange-500",
+    tech:"Next.js, Typescript, TailwindCSS, Prisma, PostgreSQL, NextAuth, Node.js, Express, Websocket, docker ,CI/CD,Docker,AWS",
     github: "https://github.com/yourusername/codely",
     demo: "#",
   },
-  {
-    title: "Weather App",
-    desc: "Weather forecast app fetching live data from OpenWeather API.",
-    img: "/dummy.png",
-    github: "https://github.com/yourusername/weather-app",
-    demo: "#",
-  },
-  {
-    title: "Task Manager",
-    desc: "A task management tool with JWT auth and MongoDB backend.",
-    img: "/dummy.png",
-    github: "https://github.com/yourusername/task-manager",
-    demo: "#",
-  },
+  // {
+  //   title: "Weather App",
+  //   desc: "Weather forecast app fetching live data from OpenWeather API.",
+  //   img: "/dummy.png",
+  //   github: "https://github.com/yourusername/weather-app",
+  //   demo: "#",
+  // },
+  //  {
+  //   title: "Portfolio Website",
+  //   desc: "My personal portfolio built with Next.js, TailwindCSS, and Framer Motion.",
+  //   img: "/dummy.png",
+  //   github: "https://github.com/yourusername/portfolio",
+  //   demo: "https://yourportfolio.com",
+  // },
+  // {
+  //   title: "Chat App",
+  //   desc: "A real-time chat application using WebSockets and Node.js.",
+  //   img: "/dummy.png",
+  //   github: "https://github.com/yourusername/chat-app",
+  //   demo: "#",
+  // },
+  // {
+  //   title: "Task Manager",
+  //   desc: "A task management tool with JWT auth and MongoDB backend.",
+  //   img: "/dummy.png",
+  //   github: "https://github.com/yourusername/task-manager",
+  //   demo: "#",
+  // },
 ];
 
 const Projects = () => {
@@ -163,11 +182,11 @@ const Projects = () => {
 
   return (
     <section
-      className={`min-h-screen py-16 px-6 ${isDarkMode ? "bg-black text-white" : "bg-white text-black"
+      className={`min-h-screen pt-16 px-6 ${isDarkMode ? "bg-black text-white" : "bg-white text-black"
         }`}
     >
       <MotionH1
-        className="text-4xl font-bold mb-10 text-blue-500 text-center"
+        className="text-4xl font-bold  text-blue-500 text-center"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -178,12 +197,12 @@ const Projects = () => {
 
 <div className="flex flex-col ">
 {
-  projects.map((project, index) => (<>
+  projects.map((project, index) => (<div key={project.title}>
  
   {renderProjects(project,index)}
 
   
-  </>))
+  </div>))
 }
 </div>
 
