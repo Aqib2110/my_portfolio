@@ -150,6 +150,48 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
         ),
         name: "PostgreSQL",
       },
+       {
+        icon: (
+          <Image
+            src="/docker.png"
+            width={50}
+            height={50}
+            alt="Docker"
+            loading="lazy"
+            placeholder="blur"
+            blurDataURL="/docker.png"
+          />
+        ),
+        name: "Docker",
+      },
+       {
+        icon: (
+          <Image
+            src="/Kubernetes.png"
+            width={50}
+            height={50}
+            alt="Kubernetes"
+            loading="lazy"
+            placeholder="blur"
+            blurDataURL="/Kubernetes.png"
+          />
+        ),
+        name: "Kubernetes",
+      },
+       {
+        icon: (
+          <Image
+            src="/AWS.png"
+            width={50}
+            height={50}
+            alt="AWS"
+            loading="lazy"
+            placeholder="blur"
+            blurDataURL="/AWS.png"
+          />
+        ),
+        name: "AWS",
+      },
     ],
     []
   );

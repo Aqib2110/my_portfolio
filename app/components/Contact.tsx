@@ -193,9 +193,9 @@ const Contact: React.FC = () => {
           <h3 className="text-xl font-semibold mt-6 mb-3">Follow Me</h3>
           <div className="flex gap-5">
             {[
-              { name: "GitHub", link: "https://github.com/" },
-              { name: "LinkedIn", link: "https://linkedin.com/" },
-              { name: "Twitter", link: "https://twitter.com/" },
+              { name: "GitHub", link: "https://github.com/Aqib2110" },
+              { name: "LinkedIn", link: "https://www.linkedin.com/in/muhammad-aqib-478940324?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
+              { name: "Twitter", link: "https://x.com/MuhammadAq36776" },
             ].map((social) => (
               <Link
                 key={social.name}

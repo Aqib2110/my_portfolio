@@ -15,7 +15,7 @@ const Footer = () => {
     >
       <div className="flex justify-center gap-6 mb-4">
         <Link
-          href="https://github.com/yourusername"
+          href="https://github.com/Aqib2110"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
@@ -24,7 +24,7 @@ const Footer = () => {
         </Link>
 
         <Link
-          href="https://linkedin.com/in/yourusername"
+          href="https://www.linkedin.com/in/muhammad-aqib-478940324?utm_source=share_via&utm_content=profile&utm_medium=member_android"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
@@ -33,7 +33,7 @@ const Footer = () => {
         </Link>
 
         <Link
-          href="https://twitter.com/yourusername"
+          href="https://x.com/MuhammadAq36776"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Twitter"
