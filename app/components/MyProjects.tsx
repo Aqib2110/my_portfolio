@@ -15,14 +15,73 @@ const MotionH1 = dynamic(
 );
 
 import { FaGithub } from "react-icons/fa";
-import { div } from "framer-motion/m";
+
+
+function MobileMockup(project: any) {
+   return <div className="grid grid-cols-1 py-10 md:py-0 gap-10 md:gap-0 md:grid-cols-3  h-full w-full">
+
+
+    <div className="flex flex-col gap-5 gap-1 md:pt-20 w-full  h-full ">
+      <h3 className={`text-[32px] text-center ${project.titleClr} font-bold `}>{project.title}</h3>
+
+ <div className="flex justify-center px-3 h-full items-center">
+     
+       <Image
+        src={project.img}
+        alt={project.title}
+        width={800}
+        height={600}
+        className=" md:hover:scale-150 active:scale-120 scale-100 md:scale-140 transition-transform duration-300 object-fit"
+      />
+    
+     
+    </div>
+
+      <p className="text-[16px] text-center text-gray-600 dark:text-gray-300">{project.desc}</p>
+      <div>
+
+       
+
+        <h4 className="text-[18px] text-center font-semibold mt-4 mb-2">Tech Stack:</h4>
+        <div className="mx-auto flex justify-center flex-wrap">
+ {project.tech.split(",").map((tech: any) => (
+          <span key={tech} className=" bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm mr-2 mb-2">
+            {tech.trim()}
+          </span>
+        ))}
+        </div>
+       
+      </div>
+{/* bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 */}
+      <div className="flex justify-center items-center gap-4 mt-2">
+                <Link href={project.demo} target="_blank">
+                  <span className="flex h-10 items-center gap-2 px-4 rounded-md text-blue-500 text-sm font-medium border hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer">
+                    View Site
+                    
+                  </span>
+                </Link>
+
+                <Link href={project.github} target="_blank">
+                  <span className="flex h-10 items-center gap-2 px-4 rounded-md text-blue-500 text-sm font-medium border hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer">
+                    <FaGithub /> Code
+                  </span>
+                </Link>
+              </div>
+    </div>
+
+
+ 
+
+
+  </div>
+}
 
 function leftMockup(project: any) {
   return <div className="grid grid-cols-1 py-10 md:py-0 gap-10 md:gap-0 md:grid-cols-3  h-full w-full">
 
 
-    <div className="flex justify-center  h-full items-center">
-      <Link href={project.demo} target="_blank">
+    <div className="flex justify-center w-full px-3 h-full items-center">
+    
        <Image
         src={project.img}
         alt={project.title}
@@ -30,7 +89,7 @@ function leftMockup(project: any) {
         height={600}
         className=" md:hover:scale-150 active:scale-150 scale-140 transition-transform duration-300 object-fit"
       />
-      </Link>
+    
      
     </div>
 
@@ -54,8 +113,13 @@ function leftMockup(project: any) {
 
     <div className="flex flex-col gap-1 md:pt-20   h-full ">
       <h3 className={`text-[32px] ${project.titleClr} font-bold `}>{project.title}</h3>
+
+
       <p className="text-[16px] text-gray-600 dark:text-gray-300">{project.desc}</p>
       <div>
+
+       
+
         <h4 className="text-[18px] font-semibold mt-4 mb-2">Tech Stack:</h4>
         {project.tech.split(",").map((tech: any) => (
           <span key={tech} className="inline-block bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-3 py-1 rounded-full text-sm mr-2 mb-2">
@@ -135,7 +199,6 @@ function rightMockup(project: any) {
 
 
     <div className="flex justify-center items-center">
-      <Link href={project.demo} target="_blank">
        <Image
         src={project.img}
         alt={project.title}
@@ -143,8 +206,6 @@ function rightMockup(project: any) {
         height={900}
         className=" md:hover:scale-150 active:scale-150 scale-140 transition-transform duration-300 object-cover"
       />
-      </Link>
-     
     </div>
 
 
@@ -163,16 +224,16 @@ const projects = [
     titleClr: "text-[#0A1A30]",
     tech: "Next.js,Typescript, TailwindCSS, Prisma, PostgreSQL, NextAuth, Node.js ,Openai, redis ,Vercel",
     github: "https://github.com/Aqib2110/Personal_Knowledge_Manager_demo",
-    demo: "https://personal-knowledge-manager-demo-3hdy-qwp5jflfu.vercel.app",
+    demo: "https://personal-knowledge-manager-demo-3hd.vercel.app",
   },
-  {
-    title: "Codely",
-    desc: "Codely lets you run code securely in isolated environments without setup hassles. Collaborate in real time with others, making coding faster, interactive, and seamless.",
-    img: "/codely.png",
-    titleClr: "text-orange-500",
-    tech: "Next.js, Typescript, TailwindCSS, Prisma, PostgreSQL, NextAuth, Node.js, Express, Websocket, docker ,CI/CD,Docker,AWS",
-    github: "https://github.com/Aqib2110/Codely_App",
-    demo: "#",
+    {
+    title: "Admin Dashboard",
+    desc: "A responsive admin dashboard built with Next.js and TailwindCSS.",
+    img: "/dashboard.png",
+    titleClr: "text-blue-500",
+    tech: "Next.js,Typescript, TailwindCSS, Prisma, Framer Motion, NextAuth ,Vercel",
+    github: "https://github.com/Aqib2110/Admin_Panel",
+    demo: "https://admin-panel-neon-pi.vercel.app",
   },
   {
     title: "Portfolio Website",
@@ -181,7 +242,16 @@ const projects = [
     titleClr: "text-neutral-900",
     tech: "Next.js,Typescript, TailwindCSS, Prisma, Framer Motion, NextAuth ,Vercel",
     github: "https://github.com/Aqib2110/my_portfolio",
-    demo: "https://my-portfolio-ecru-two-76.vercel.app",
+    demo: "https://aqib-portfolio-21.vercel.app",
+  },
+   {
+    title: "Codely",
+    desc: "Codely lets you run code securely in isolated environments without setup hassles. Collaborate in real time with others, making coding faster, interactive, and seamless.",
+    img: "/codely.png",
+    titleClr: "text-orange-500",
+    tech: "Next.js, Typescript, TailwindCSS, Prisma, PostgreSQL, NextAuth, Node.js, Express, Websocket, docker ,CI/CD,Docker,AWS",
+    github: "https://github.com/Aqib2110/Codely_App",
+    demo: "#",
   }
 ];
 
@@ -192,12 +262,12 @@ const Projects = () => {
 function renderProjects(project: any, index: number) {
   return <>
     {mob ?
-      leftMockup(project)
-    
-   : index % 2 === 0  ?
+      MobileMockup(project)
+     : (index % 2 === 0  ?
       leftMockup(project)
       :
-      rightMockup(project)
+      rightMockup(project))
+  
     }
   </>
 }
@@ -210,9 +280,11 @@ function renderProjects(project: any, index: number) {
 
   return (
     <section
-      className={`min-h-screen pt-16 px-6 ${isDarkMode ? "bg-black text-white" : "bg-white text-black"
+      id="projects"
+      className={`min-h-screen pt-16  ${isDarkMode ? "bg-black text-white" : "bg-white text-black"
         }`}
     >
+  {/* px-6 */}
       <MotionH1
         className="text-4xl font-bold  text-blue-500 text-center"
         initial={{ opacity: 0, y: 30 }}
@@ -223,7 +295,7 @@ function renderProjects(project: any, index: number) {
       </MotionH1>
 
 
-      <div className="flex flex-col pb-10">
+      <div className="flex flex-col ">
         {
           projects.map((project, index) => (<div key={project.title}>
 
@@ -234,6 +306,17 @@ function renderProjects(project: any, index: number) {
         }
       </div>
        
+        <div className="text-center mt-16">
+        <p className="mb-4 text-gray-500">
+          Have a project in mind? Let’s build something amazing together.
+        </p>
+        <a
+          href="/contact"
+          className="inline-block px-6 py-3 mb-6 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+        >
+          Hire Me
+        </a>
+      </div>
 
     </section>
   );

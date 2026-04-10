@@ -118,7 +118,7 @@ const About: React.FC = () => {
     <section
       className={`min-h-screen ${
         isDarkMode ? "bg-black text-white" : "bg-white text-black"
-      } flex flex-col justify-center items-center px-6`}
+      } flex flex-col justify-center items-center  py-15 px-6`}
     >
       <MotionH1
         className="text-4xl text-blue-500 font-bold mb-6"

@@ -151,6 +151,7 @@ const Contact: React.FC = () => {
                   ? "bg-zinc-900 border-gray-700 text-white placeholder-gray-400"
                   : "bg-white border-gray-700 text-black placeholder-gray-500"
               }`}
+              
               required
             />
           ))}

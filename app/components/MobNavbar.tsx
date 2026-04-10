@@ -15,7 +15,7 @@ const MobNavbar: React.FC<MobNavbarProps> = ({ handleClick }) => {
   }, [setIsDarkMode]);
 
   return (
-    <div className={`h-14 flex  items-center z-50 ${isDarkMode ? "bg-neutral text-neutral-content" : "bg-zinc-100"}`}>
+    <div className={`h-14 flex w-screen  items-center z-50 ${isDarkMode ? "bg-neutral text-neutral-content" : "bg-zinc-100"}`}>
       <div className="flex  items-center px-5 w-full">
         <GiHamburgerMenu
           onClick={handleClick}

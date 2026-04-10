@@ -217,17 +217,7 @@ const Resume: React.FC = () => {
         ))}
       </div>
 
-      <div className="text-center mt-16">
-        <p className="mb-4 text-gray-500">
-          Have a project in mind? Let’s build something amazing together.
-        </p>
-        <a
-          href="/contact"
-          className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-        >
-          Contact Me
-        </a>
-      </div>
+     
     </section>
   );
 };

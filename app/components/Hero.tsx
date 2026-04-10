@@ -28,7 +28,12 @@ const Hero = ({ isDarkMode }: HeroProps) => {
     "Full Stack Developer",
     "Welcome to my Portfolio",
   ];
-
+const scrollToWork = () => {
+  const section = document.getElementById("projects");
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
   return (
     <div className="px-0    md:px-0">
       <MotionDiv
@@ -89,14 +94,15 @@ const Hero = ({ isDarkMode }: HeroProps) => {
             viewport={{ once: true }}
           >
             <div className="w-3/4 sm:w-1/2 md:w-full">
-              <Link href="/resume">
+              {/* <Link href="#projects"> */}
                 <button
                   type="button"
                   className="xl:text-lg pointer-events-auto text-auto bg-gradient-to-r w-full from-pink-500 via-purple-500 to-indigo-500 rounded-md cursor-pointer py-2 hover:bg-purple-600 text-white"
+                onClick={scrollToWork}
                 >
-                  Download Resume
+                My Projects
                 </button>
-              </Link>
+              {/* </Link> */}
             </div>
 
             <div className="w-3/4 sm:w-1/2 md:w-full">
