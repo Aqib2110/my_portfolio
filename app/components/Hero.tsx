@@ -102,7 +102,7 @@ const scrollToWork = () => {
                 >
                 My Projects
                 </button>
-              {/* </Link> */}
+              
             </div>
 
             <div className="w-3/4 sm:w-1/2 md:w-full">
