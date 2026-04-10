@@ -87,7 +87,7 @@ const scrollToWork = () => {
               </MotionDiv>
             ))}
           </MotionDiv>
-         <p className="text-lg md:text-xl pt-3 font-medium">
+         <p className="text-lg md:text-xl md:text-start text-center pt-3 font-medium">
           I build fast, scalable, and user-friendly web applications.
          </p>
           <MotionDiv
