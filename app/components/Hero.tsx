@@ -26,7 +26,7 @@ const Hero = ({ isDarkMode }: HeroProps) => {
       </span>
     </>,
     "Full Stack Developer",
-    "Welcome to my Portfolio",
+    // "Welcome to my Portfolio",
   ];
 const scrollToWork = () => {
   const section = document.getElementById("projects");
@@ -35,9 +35,9 @@ const scrollToWork = () => {
   }
 };
   return (
-    <div className="px-0    md:px-0">
+    <div className="">
       <MotionDiv
-        className="flex flex-col md:flex-row gap-0 md:gap-10"
+        className="flex flex-col  md:flex-row gap-0 md:gap-10"
         initial="hidden"
         animate="visible"
         variants={{
@@ -68,10 +68,10 @@ const scrollToWork = () => {
           </div>
         </MotionDiv>
 
-        <div className="pt-4 w-full md:w-auto  md:pt-8 pb-3">
+        <div className="pt-4 w-full md:w-auto md:pt-8 pb-3">
           {/* px-5 sm:px-8 md:px-0*/}
           <MotionDiv
-            className={`flex flex-col w-5/6 md:w-auto  md:mx-0 mx-auto gap-2 md:gap-4 text-2xl xl:text-3xl font-bold ${
+            className={`flex flex-col  w-5/6 md:w-auto  md:mx-0 mx-auto gap-2 md:gap-4 text-2xl xl:text-3xl font-bold ${
               isDarkMode ? "text-white" : "text-black"
             }`}
             viewport={{ once: true }}
@@ -87,24 +87,24 @@ const scrollToWork = () => {
               </MotionDiv>
             ))}
           </MotionDiv>
-
+         <p className="text-lg md:text-xl pt-3 font-medium">
+          I build fast, scalable, and user-friendly web applications.
+         </p>
           <MotionDiv
             className="flex flex-col items-center justify-center md:flex-row px-0 md:px-2 gap-3 mt-5"
             variants={fadeInUpVariants}
             viewport={{ once: true }}
           >
             <div className="w-3/4 sm:w-1/2 md:w-full">
-              {/* <Link href="#projects"> */}
                 <button
                   type="button"
                   className="xl:text-lg pointer-events-auto text-auto bg-gradient-to-r w-full from-pink-500 via-purple-500 to-indigo-500 rounded-md cursor-pointer py-2 hover:bg-purple-600 text-white"
                 onClick={scrollToWork}
                 >
-                My Projects
+                View My Work
                 </button>
               
             </div>
-
             <div className="w-3/4 sm:w-1/2 md:w-full">
               <Link href="/contact">
                 <button
@@ -113,13 +113,15 @@ const scrollToWork = () => {
                     isDarkMode ? "bg-white text-black" : "bg-black text-white"
                   }`}
                 >
-                  Contact Me
+                  Let's Connect
                 </button>
               </Link>
             </div>
           </MotionDiv>
         </div>
       </MotionDiv>
+
+     
     </div>
   );
 };
