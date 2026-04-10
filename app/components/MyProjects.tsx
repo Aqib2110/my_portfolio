@@ -87,7 +87,7 @@ function leftMockup(project: any) {
         alt={project.title}
         width={800}
         height={600}
-        className=" md:hover:scale-150 active:scale-150 scale-140 transition-transform duration-300 object-fit"
+        className="  md:hover:scale-150 active:scale-120 scale-100 md:scale-140 transition-transform duration-300 object-fit"
       />
     
      
@@ -204,7 +204,7 @@ function rightMockup(project: any) {
         alt={project.title}
         width={900}
         height={900}
-        className=" md:hover:scale-150 active:scale-150 scale-140 transition-transform duration-300 object-cover"
+        className="  md:hover:scale-150 active:scale-120 scale-100 md:scale-140 transition-transform duration-300 object-cover"
       />
     </div>
 
