@@ -221,6 +221,8 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
     
 <Tooltip
   title={skill.name}
+  enterTouchDelay={0}
+  leaveTouchDelay={3000}
   placement="top"
   arrow
   slotProps={{
